@@ -3,5 +3,5 @@
 2. npm i @vitejs/plugin-react-swc
 3. npm run dev
 
-# Live Priview
+# Live Preview
 https://graviti-routes-mo4v.vercel.app/
