@@ -1,5 +1,5 @@
 import { Libraries, useLoadScript } from "@react-google-maps/api";
-import React, { useRef, useState, createRef, useEffect } from "react";
+import React, { useRef, useState, createRef } from "react";
 import {
   DirectionForm,
 } from "./components";
@@ -58,9 +58,9 @@ const App = () => {
       })),
     });
     const routeDistance=result.routes[0].legs.reduce((acc,leg)=>{
-      const arr=leg['distance']['text'].split(' ')[0].split(',')
-      const res=arr.join('')
-      return acc+parseInt(res)
+      const arr=leg.distance?.text.split(' ')[0].split(',').join('')
+      
+      return acc+parseInt(arr)
     },0)
 
     setDirectionResponse(result);

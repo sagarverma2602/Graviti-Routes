@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({
       )}
       <input
         {...props}
-        ref={handleInputRef ? (ref) => handleInputRef(ref) : null}
+        ref={handleInputRef ? (ref) => handleInputRef(ref) : undefined}
         className="outline-none bg-white font-bold"
       />
       {error && <div className="text-red-600">{error}</div>}

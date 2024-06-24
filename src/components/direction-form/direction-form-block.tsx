@@ -28,8 +28,11 @@ const DirectionFormBlock: React.FC<DirectionFormProps> = ({
               startEnhancer={<img src={WaypointMarker} alt="Waypoint Marker" />}
               type="text"
               placeholder={`Stop ${index + 1}`}
-              handleInputRef={(ref: HTMLInputElement) =>
-                (waypoint.ref.current = ref)
+              handleInputRef={(ref: HTMLInputElement) =>{
+
+                (waypoint.ref as React.MutableRefObject<HTMLInputElement | null>).current = ref;
+              }
+
               }
             />
           </Autocomplete>
@@ -48,7 +51,7 @@ const DirectionFormBlock: React.FC<DirectionFormProps> = ({
                   placeholder="Origin"
                   // ref={originRef}
                   handleInputRef={(ref: HTMLInputElement) =>
-                    (originRef.current = ref)
+                    {(originRef as React.MutableRefObject<HTMLInputElement | null>).current = ref;}
                   }
                 />
               </Autocomplete>
@@ -82,7 +85,7 @@ const DirectionFormBlock: React.FC<DirectionFormProps> = ({
                   placeholder="Destination"
                   // ref={destinationRef}
                   handleInputRef={(ref: HTMLInputElement) =>
-                    (destinationRef.current = ref)
+                    {(destinationRef as React.MutableRefObject<HTMLInputElement | null>).current = ref;}
                   }
                   startEnhancer={
                     <img src={DestinationMarker} alt="Destination Marker" />

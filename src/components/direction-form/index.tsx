@@ -5,7 +5,7 @@ import DirectionFormBlock from './direction-form-block'
 export interface DirectionFormProps {
     distance: string | null;
     duration: string | null;
-    waypoints: { ref: React.RefObject<HTMLInputElement>; value: string }[];
+    waypoints: { ref: React.RefObject<HTMLInputElement>; value: string}[];
     showWaypointInput: boolean;
     error: string;
     originRef: React.RefObject<HTMLInputElement>;
